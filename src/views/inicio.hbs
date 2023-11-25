@@ -1,0 +1,26 @@
+<!--Desarrollado por Matias Abregú-->
+<h1 class="titulo">Noticias</h1>
+<div class="container">
+    <div class="row">
+        {{#each noticias}}
+        <div class="col-md-4 p-4">
+            <div class="card text-white bg-info mb-3" style="max-width: 80rem;">
+                <div class="card-header">Tipo de Ciberestafa: {{tipoCiber}}</div>
+                <div class="card-body">
+                    <h4 class="card-title">{{titulo}}</h4>
+                    <p class="card-text">{{descripcion}}</p>
+                </div>
+                {{#if ../user}}
+                <form action="/actualizar-noticia/{{_id}}" method="GET">
+                    <button type="submit" class="btn btn-outline-warning mb-1" style="width: 100%;">Editar</button>
+                </form>
+                <form action="/eliminar/{{_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE" />
+                    <button type="submit" class="btn btn-danger" style="width: 100%;">Eliminar</button>
+                </form>
+                {{/if}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

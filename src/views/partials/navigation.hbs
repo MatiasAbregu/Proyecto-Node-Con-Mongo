@@ -1,0 +1,27 @@
+<!--Desarrollado por Matias Abregú-->
+<nav class="navbar navbar-expand-md bg-light" data-bs-theme="light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">Noticibertafa</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03"
+            aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarColor03">
+            <ul class="navbar-nav ml-auto">
+                {{#if user}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/crear-noticia">Crear Noticia</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/cerrar-sesion">Cerrar Sesion</a>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link" href="/iniciar-sesion">Iniciar Sesion</a>
+                </li>
+                {{/if}}
+            </ul>
+        </div>
+    </div>
+</nav>
